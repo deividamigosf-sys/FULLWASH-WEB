@@ -143,6 +143,50 @@
   @media (max-width: 768px) { .nav-links { display: none; } .hero-stats { gap: 1.5rem; } .hero-logo-hero { display: none; } }
   .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
   .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* MODAL DOMICILIO */
+  .modal-overlay {
+    display: none; position: fixed; inset: 0; z-index: 9999;
+    background: rgba(10,22,40,0.75); backdrop-filter: blur(4px);
+    align-items: center; justify-content: center; padding: 1rem;
+  }
+  .modal-overlay.active { display: flex; }
+  .modal-box {
+    background: var(--white); border-radius: var(--radius);
+    padding: 2rem 2rem 1.75rem; max-width: 480px; width: 100%;
+    box-shadow: 0 24px 64px rgba(10,22,40,0.25);
+    animation: modalIn 0.25s ease;
+  }
+  @keyframes modalIn { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+  .modal-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.25rem; }
+  .modal-title { font-family: var(--font-head); font-size: 1.2rem; font-weight: 800; color: var(--blue-900); }
+  .modal-close { background: var(--gray-100); border: none; border-radius: 50%; width: 32px; height: 32px; cursor: pointer; display: flex; align-items: center; justify-content: center; color: var(--gray-700); font-size: 1rem; transition: background 0.2s; }
+  .modal-close:hover { background: var(--blue-100); }
+  .modal-notice { background: var(--blue-50); border: 1px solid var(--blue-100); border-left: 3px solid var(--blue-500); border-radius: var(--radius-sm); padding: 0.85rem 1rem; margin-bottom: 1.5rem; font-size: 0.85rem; color: var(--blue-700); line-height: 1.5; }
+  .form-group { margin-bottom: 1.1rem; }
+  .form-label { display: block; font-size: 0.82rem; font-weight: 500; color: var(--gray-700); margin-bottom: 5px; }
+  .form-input {
+    width: 100%; padding: 11px 14px; border: 1px solid var(--gray-300);
+    border-radius: var(--radius-sm); font-family: var(--font-body); font-size: 0.9rem;
+    color: var(--blue-900); background: var(--white); transition: border-color 0.2s;
+    outline: none;
+  }
+  .form-input:focus { border-color: var(--blue-500); box-shadow: 0 0 0 3px rgba(37,99,200,0.1); }
+  .form-input::placeholder { color: var(--gray-300); }
+  .form-input.error { border-color: #e24b4a; }
+  .form-error { font-size: 0.75rem; color: #e24b4a; margin-top: 4px; display: none; }
+  .form-error.show { display: block; }
+  .modal-footer { margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.75rem; }
+  .btn-whatsapp-send {
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+    background: #25d366; color: var(--white); border: none; border-radius: 50px;
+    padding: 14px 24px; font-family: var(--font-body); font-size: 0.95rem; font-weight: 500;
+    cursor: pointer; transition: background 0.2s, transform 0.15s; text-decoration: none; width: 100%;
+  }
+  .btn-whatsapp-send:hover { background: #1ebe5d; transform: translateY(-1px); }
+  .btn-cancel { background: none; border: 1px solid var(--gray-300); border-radius: 50px; padding: 11px 24px; font-family: var(--font-body); font-size: 0.88rem; color: var(--gray-500); cursor: pointer; transition: border-color 0.2s, color 0.2s; }
+  .btn-cancel:hover { border-color: var(--gray-700); color: var(--gray-700); }
+
 </style>
 </head>
 <body>
@@ -156,7 +200,7 @@
     <li><a href="#servicios">Servicios</a></li>
     <li><a href="#sucursales">Sucursales</a></li>
     <li><a href="#horarios">Contacto</a></li>
-    <li><a href="https://wa.me/593967586150" class="nav-cta" target="_blank">WhatsApp</a></li>
+    <li><a href="https://wa.me/593967586150?text=Hola%21%20Me%20gustar%C3%ADa%20informaci%C3%B3n%20sobre%20sus%20servicios%20de%20lavander%C3%ADa." class="nav-cta" target="_blank">WhatsApp</a></li>
   </ul>
 </nav>
 
@@ -176,7 +220,7 @@
         <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
         Ver sucursales
       </a>
-      <a href="https://wa.me/593967586150" class="btn-outline" target="_blank">
+      <a href="https://wa.me/593967586150?text=Hola%21%20Me%20gustar%C3%ADa%20informaci%C3%B3n%20sobre%20sus%20servicios%20de%20lavander%C3%ADa." class="btn-outline" target="_blank">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.852L.057 23.882a.5.5 0 00.611.61l6.101-1.459A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.943 0-3.77-.494-5.365-1.362l-.387-.217-4.01.959.988-3.93-.24-.395A9.938 9.938 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
         Escribir por WhatsApp
       </a>
@@ -214,10 +258,11 @@
       <div class="service-name">Planchado</div>
       <p class="service-desc">Planchado profesional de camisas, pantalones, vestidos y todo tipo de prendas. Acabado impecable.</p>
     </div>
-    <div class="service-card reveal">
+    <div class="service-card reveal" style="cursor:pointer;" onclick="abrirModal()">
       <div class="service-icon">🚗</div>
       <div class="service-name">Servicio a domicilio</div>
-      <p class="service-desc">Recogemos tu ropa en la puerta de tu casa u oficina y la entregamos limpia y lista. Sin que tengas que salir.</p>
+      <p class="service-desc">Recogemos tu ropa en la puerta de tu casa u oficina y la entregamos limpia y lista.</p>
+      <div style="margin-top:1rem;display:inline-flex;align-items:center;gap:6px;font-size:0.82rem;font-weight:500;color:var(--blue-500);">Solicitar ahora <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
     </div>
     <div class="service-card express reveal">
       <div class="express-badge">
@@ -407,7 +452,7 @@
           </div>
           <div>
             <div style="font-size:0.78rem;color:var(--gray-500)">WhatsApp</div>
-            <a href="https://wa.me/593967586150" target="_blank">+593 967 586 150</a>
+            <a href="https://wa.me/593967586150?text=Hola%21%20Me%20gustar%C3%ADa%20informaci%C3%B3n%20sobre%20sus%20servicios%20de%20lavander%C3%ADa." target="_blank">+593 967 586 150</a>
           </div>
         </div>
         <div class="contact-item">
@@ -416,7 +461,7 @@
           </div>
           <div>
             <div style="font-size:0.78rem;color:var(--gray-500)">Correo</div>
-            <a href="mailto:lavanderiafullwash01@gmail.com">lavanderiafullwash01@gmail.com</a>
+            <a href="/cdn-cgi/l/email-protection#660a071007080203140f0700130a0a1107150e565726010b070f0a4805090b"><span class="__cf_email__" data-cfemail="573b362136393332253e3631223b3b2036243f676617303a363e3b7934383a">[email&#160;protected]</span></a>
           </div>
         </div>
         <div class="contact-item">
@@ -447,22 +492,12 @@
 </footer>
 
 <!-- WHATSAPP FLOTANTE -->
-<a href="https://wa.me/593967586150" class="whatsapp-float" target="_blank" rel="noopener">
+<a href="https://wa.me/593967586150?text=Hola%21%20Me%20gustar%C3%ADa%20informaci%C3%B3n%20sobre%20sus%20servicios%20de%20lavander%C3%ADa." class="whatsapp-float" target="_blank" rel="noopener">
   <span class="whatsapp-tooltip">¡Escríbenos!</span>
   <svg width="30" height="30" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.852L.057 23.882a.5.5 0 00.611.61l6.101-1.459A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.943 0-3.77-.494-5.365-1.362l-.387-.217-4.01.959.988-3.93-.24-.395A9.938 9.938 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
 </a>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry, i) => {
-      if (entry.isIntersecting) {
-        setTimeout(() => entry.target.classList.add('visible'), i * 80);
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.12 });
-  reveals.forEach(el => observer.observe(el));
-</script>
-</body>
-</html>
