@@ -616,8 +616,7 @@ function enviar(){
   if(nota)lineas.push('*Nota:* '+nota);
   lineas.push('');
   lineas.push('_*Mi ubicación exacta:* (por favor comparte tu ubicación en este chat)_');
-  var msg=encodeURIComponent(lineas.join('
-'));
+  var msg=encodeURIComponent(lineas.join('\n'));
   window.open('https://wa.me/593967586150?text='+msg,'_blank');
   cerrar();
 }
