@@ -19,8 +19,8 @@ html{scroll-behavior:smooth}
 body{font-family:var(--fb);background:var(--w);color:var(--b9);overflow-x:hidden}
 
 /* NAV - Dos filas */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,.12)}
-.nav-top{display:flex;align-items:center;justify-content:space-between;padding:0 5vw;height:72px;background:#fff;border-bottom:1px solid #e8f0f8}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,.12);background:#ffffff}
+.nav-top{display:flex;align-items:center;justify-content:space-between;padding:0 5vw;height:72px;background-color:#ffffff!important;background:#ffffff!important;border-bottom:1px solid #e0e0e0}
 .nav-logo img{height:64px;width:auto}
 .nav-top-right{display:flex;align-items:center;gap:1.2rem}
 .nav-phone{display:flex;align-items:center;gap:8px;text-decoration:none;color:var(--b7)}
@@ -39,7 +39,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;box-shadow:0 2px 12px rgba(0
 .social-link:hover{transform:scale(1.15);opacity:1}
 
 /* HERO */
-#hero{min-height:100vh;display:flex;align-items:center;background:var(--b9);padding:160px 5vw 80px;position:relative;overflow:hidden}
+#hero{min-height:100vh;display:flex;align-items:center;background-color:#061829!important;background:#061829;padding:120px 5vw 80px;position:relative;overflow:hidden}
 .hbc{position:absolute;border-radius:50%;background:var(--b7);opacity:.18}
 .hbc.c1{width:520px;height:520px;top:-140px;right:-100px}
 .hbc.c2{width:300px;height:300px;bottom:-80px;left:10%}
@@ -181,7 +181,7 @@ footer a{font-size:.8rem;color:var(--b2);text-decoration:none}
   nav{padding:0}
   .nav-top{padding:0 4vw}
   .waf-wrap{bottom:14px;right:14px}
-  #hero{text-align:center;padding-top:90px}
+  #hero{text-align:center;padding-top:80px}
   .hc{max-width:100%}
   .hbtns{justify-content:center}
   .hsub{max-width:100%}
@@ -209,7 +209,7 @@ footer a{font-size:.8rem;color:var(--b2);text-decoration:none}
           <span class="nav-phone-num">096 758 6150</span>
         </div>
       </a>
-      <a href="#" onclick="document.getElementById('modal-domicilio').style.display='flex'; return false;" class="nav-cta">Servicio a domicilio</a>
+      <a href="#" onclick="abrirModal();return false;" class="nav-cta">Servicio a domicilio</a>
     </div>
   </div>
   <!-- Fila 2: Links de navegación -->
