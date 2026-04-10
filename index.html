@@ -87,8 +87,8 @@ h2{font-family:var(--fh);font-size:clamp(1.9rem,3.5vw,2.8rem);font-weight:800;le
 
 /* SUCURSALES */
 #sucursales{background:var(--w)}
-.bg{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.25rem;margin-top:3rem}
-.bc{background:var(--w);border:1px solid var(--b1);border-radius:var(--r);overflow:hidden;transition:box-shadow .2s,transform .2s}
+.bg{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.25rem;margin-top:3rem;justify-items:center}
+.bc{background:var(--w);border:1px solid var(--b1);border-radius:var(--r);overflow:hidden;transition:box-shadow .2s,transform .2s;width:100%;max-width:320px}
 .bc:hover{box-shadow:0 8px 32px rgba(30,77,155,.1);transform:translateY(-3px)}
 .bh{background:var(--b8);padding:1.5rem 1.75rem 1.2rem}
 .bn{font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--b4);margin-bottom:.4rem}
@@ -282,31 +282,37 @@ footer a{font-size:.8rem;color:var(--b2);text-decoration:none}
   </div>
   <div class="sg">
     <div class="sc rv" onclick="abrirServicio('aguaModal')">
-      <div class="si">🫧</div>
+      <div class="si"><img src="https://raw.githubusercontent.com/deividamigosf-sys/FULLWASH-WEB/main/ICONOLAVADORA.png" alt="Lavado" style="width:36px;height:36px;object-fit:contain"></div>
       <div class="sn">Lavado en agua</div>
       <p class="sd">Proceso completo de lavado, secado y doblado con maquinaria industrial DEXTER. Incluye detergente y suavizante.</p>
       <div class="sc-link">Ver detalles <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
     </div>
     <div class="sc rv" onclick="abrirServicio('secoModal')">
-      <div class="si">🥼</div>
+      <div class="si"><img src="https://raw.githubusercontent.com/deividamigosf-sys/FULLWASH-WEB/main/ICONOSECO.jpg" alt="Lavado en seco" style="width:36px;height:36px;object-fit:contain"></div>
       <div class="sn">Lavado en seco</div>
       <p class="sd">Limpieza profesional para prendas delicadas: seda, lana, trajes, vestidos de novia, togas y más. Protege colores y fibras.</p>
       <div class="sc-link">Ver detalles <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
     </div>
     <div class="sc rv">
-      <div class="si">👕</div>
+      <div class="si"><img src="https://raw.githubusercontent.com/deividamigosf-sys/FULLWASH-WEB/main/INOCOPLANCHADO.png" alt="Planchado" style="width:36px;height:36px;object-fit:contain"></div>
       <div class="sn">Planchado</div>
       <p class="sd">Planchado profesional de camisas, pantalones, vestidos y todo tipo de prendas.</p>
     </div>
+    <div class="sc rv" onclick="abrirServicio('alfombraModal')">
+      <div class="si"><img src="https://raw.githubusercontent.com/deividamigosf-sys/FULLWASH-WEB/main/ICONOLAVALFOMBRAS.png" alt="Alfombras" style="width:36px;height:36px;object-fit:contain"></div>
+      <div class="sn">Lavado de Alfombras</div>
+      <p class="sd">Lavado profundo con maquinaria industrial especializada. Eliminamos ácaros, bacterias y manchas profundas preservando colores y fibras.</p>
+      <div class="sc-link">Ver detalles <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+    </div>
     <div class="sc rv domicilio-card" onclick="abrirModal()" style="cursor:pointer;border-color:var(--b2)">
-      <div class="si" style="background:var(--b0);font-size:1.6rem">🛒</div>
+      <div class="si" style="background:var(--b0)"><img src="https://raw.githubusercontent.com/deividamigosf-sys/FULLWASH-WEB/main/ICONODOMICILIO.png" alt="Domicilio" style="width:36px;height:36px;object-fit:contain"></div>
       <div class="sn">Servicio a Domicilio</div>
       <p class="sd">Recogemos tu ropa en tu casa y la entregamos lista. Sin filas, sin esperas. Solo coordina por WhatsApp.</p>
       <div class="sc-link">Solicitar recogida <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
     </div>
     <div class="sc express rv" onclick="abrirServicio('expressModal')">
       <div class="exbadge"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>Express — 2 horas</div>
-      <div class="si">⚡</div>
+      <div class="si"><img src="https://raw.githubusercontent.com/deividamigosf-sys/FULLWASH-WEB/main/ICONOEXPRESS.png" alt="Express" style="width:36px;height:36px;object-fit:contain"></div>
       <div class="sn">Autoservicio Express</div>
       <p class="sd">Servicio por encargo o autoservicio. Tu ropa lista en 2 horas, incluye detergente y suavizante, sin perder calidad.</p>
       <div class="sc-link">Ver detalles <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
@@ -552,11 +558,38 @@ footer a{font-size:.8rem;color:var(--b2);text-decoration:none}
   </div>
 </div>
 
+<!-- MODAL LAVADO DE ALFOMBRAS -->
+<div class="mo" id="alfombraModal" onclick="cerrarSvc(event,'alfombraModal')">
+  <div class="mb">
+    <div class="mhd">
+      <div style="display:flex;align-items:center;gap:10px"><div style="width:38px;height:38px;background:var(--b0);border-radius:var(--rs);display:flex;align-items:center;justify-content:center"><img src="https://raw.githubusercontent.com/deividamigosf-sys/FULLWASH-WEB/main/ICONOLAVALFOMBRAS.png" alt="Alfombras" style="width:28px;height:28px;object-fit:contain"></div><span class="mt">Lavado de Alfombras</span></div>
+      <button class="mcl" onclick="cerrarSvcById('alfombraModal')">&times;</button>
+    </div>
+    <div class="mn">🏭 Limpieza profunda con <strong>maquinaria industrial especializada</strong> — devolvemos a tu alfombra su brillo, suavidad y frescura original.</div>
+    <p style="font-size:.9rem;color:var(--g7);line-height:1.7;margin-bottom:1rem">Nuestro proceso de lavado industrial para alfombras elimina el 99% de los ácaros, bacterias, hongos y alérgenos incrustados en las fibras. Utilizamos detergentes de alta presión y tecnología de extracción profunda que penetran hasta la base de la alfombra, removiendo manchas difíciles, olores y suciedad acumulada sin dañar los colores ni la estructura del tejido. Secado controlado para evitar deformaciones y garantizar un resultado impecable.</p>
+    <p style="font-size:.85rem;font-weight:600;color:var(--b7);margin-bottom:.5rem">¿Qué incluye?</p>
+    <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:1rem">
+      <span class="svc-tag">🧹 Aspirado previo</span><span class="svc-tag">💦 Lavado a presión</span><span class="svc-tag">🦠 Eliminación de ácaros</span><span class="svc-tag">🌸 Desodorización</span><span class="svc-tag">🌬️ Secado industrial</span><span class="svc-tag">✨ Cepillado final</span>
+    </div>
+    <div style="background:#e8f6fe;border-radius:var(--rs);padding:.85rem 1rem;border-left:3px solid var(--b4);margin-bottom:1.25rem">
+      <p style="font-size:.85rem;color:var(--b7);font-weight:600">🧺 Alfombras de cualquier tamaño y material</p>
+      <p style="font-size:.82rem;color:var(--g5);margin-top:3px">Persas, sintéticas, de lana, tapetes y más. Consulta por precio según tamaño.</p>
+    </div>
+    <div class="mft">
+      <a href="https://wa.me/593967586150?text=Hola!%20Me%20interesa%20el%20servicio%20de%20lavado%20de%20alfombras." target="_blank" class="bws">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.852L.057 23.882a.5.5 0 00.611.61l6.101-1.459A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.943 0-3.77-.494-5.365-1.362l-.387-.217-4.01.959.988-3.93-.24-.395A9.938 9.938 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+        Consultar por WhatsApp
+      </a>
+      <button class="bcan" onclick="cerrarSvcById('alfombraModal')">Cerrar</button>
+    </div>
+  </div>
+</div>
+
 <!-- MODAL DOMICILIO -->
 <div class="mo" id="modDom" onclick="csi(event)">
   <div class="mb">
     <div class="mhd">
-      <div style="display:flex;align-items:center;gap:10px"><div style="width:38px;height:38px;background:var(--b0);border-radius:var(--rs);display:flex;align-items:center;justify-content:center;font-size:1.2rem">🚗</div><span class="mt">Servicio a domicilio</span></div>
+      <div style="display:flex;align-items:center;gap:10px"><div style="width:38px;height:38px;background:var(--b0);border-radius:var(--rs);display:flex;align-items:center;justify-content:center"><img src="https://raw.githubusercontent.com/deividamigosf-sys/FULLWASH-WEB/main/ICONODOMICILIO.png" alt="Domicilio" style="width:28px;height:28px;object-fit:contain"></div><span class="mt">Servicio a domicilio</span></div>
       <button class="mcl" onclick="cerrar()">&times;</button>
     </div>
     <div class="mn">📦 Completa el formulario y haz clic en <strong>Solicitar Servicio a Domicilio</strong>. Se abrirá WhatsApp con tu info lista. Comparte tu ubicación exacta en el chat de WhatsApp.</div>
@@ -566,10 +599,9 @@ footer a{font-size:.8rem;color:var(--b2);text-decoration:none}
     <div class="fg"><label class="fl">Tipo de servicio</label>
       <select class="fi" id="iSer">
         <option>💧 Lavado en agua</option>
-        <option>✨ Lavado en seco</option>
         <option>👕 Planchado</option>
-        <option>💧✨ Lavado + seco</option>
-        <option>💧👕 Lavado + planchado</option>
+        <option>🧺 Lavado de Alfombras</option>
+        <option>🤔 Aún no lo sé</option>
       </select>
     </div>
     <div class="fg"><label class="fl">Nota adicional (opcional)</label><input class="fi" type="text" id="iNota" placeholder="Ej: prendas delicadas, urgente..." maxlength="100"></div>
@@ -591,7 +623,7 @@ function abrirServicio(id){document.getElementById(id).classList.add('active');d
 function cerrarSvcById(id){document.getElementById(id).classList.remove('active');document.body.style.overflow='';}
 function cerrarSvc(e,id){if(e.target===document.getElementById(id))cerrarSvcById(id);}
 document.addEventListener('keydown',function(e){
-  if(e.key==='Escape'){cerrar();['aguaModal','secoModal','expressModal'].forEach(cerrarSvcById);}
+  if(e.key==='Escape'){cerrar();['aguaModal','secoModal','expressModal','alfombraModal'].forEach(cerrarSvcById);}
 });
 function v(id,eid){
   var val=document.getElementById(id).value.trim();
