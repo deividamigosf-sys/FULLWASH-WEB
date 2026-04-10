@@ -39,7 +39,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;box-shadow:0 2px 12px rgba(0
 .social-link:hover{transform:scale(1.15);opacity:1}
 
 /* HERO */
-#hero{min-height:100vh;display:flex;align-items:center;background-color:#061829!important;background:#061829;padding:120px 5vw 80px;position:relative;overflow:hidden}
+#hero{min-height:100vh;display:flex;align-items:center;background-color:#061829!important;background-color:#061829!important;background:#061829!important;padding:120px 5vw 80px;position:relative;overflow:hidden;color:#fff}
 .hbc{position:absolute;border-radius:50%;background:var(--b7);opacity:.18}
 .hbc.c1{width:520px;height:520px;top:-140px;right:-100px}
 .hbc.c2{width:300px;height:300px;bottom:-80px;left:10%}
@@ -194,6 +194,17 @@ footer a{font-size:.8rem;color:var(--b2);text-decoration:none}
   .waf-wrap{bottom:16px;right:16px}
 }
 </style>
+
+<style>
+#hero {
+  background: #061829 !important;
+  background-color: #061829 !important;
+  min-height: 100vh !important;
+}
+#hero .hc, #hero .hc * {
+  color: #fff;
+}
+</style>
 </head>
 <body>
 
@@ -236,7 +247,7 @@ footer a{font-size:.8rem;color:var(--b2);text-decoration:none}
   </div>
 </nav>
 
-<section id="hero">
+<section id="hero" style="background:#061829!important;min-height:100vh;display:flex;align-items:center;">
   <div class="hbc c1"></div>
   <div class="hbc c2"></div>
   <div class="hlh"><img src="https://raw.githubusercontent.com/deividamigosf-sys/FULLWASH-WEB/main/dexter.jpg" alt="Lavadoras DEXTER FullWash"></div>
