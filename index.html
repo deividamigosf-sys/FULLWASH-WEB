@@ -20,7 +20,7 @@ body{font-family:var(--fb);background:var(--w);color:var(--b9);overflow-x:hidden
 
 /* NAV - Dos filas */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,.12);background:#ffffff}
-.nav-top{display:flex;align-items:center;justify-content:space-between;padding:0 5vw;height:72px;background-color:#ffffff!important;background:#ffffff!important;border-bottom:1px solid #e0e0e0}
+.nav-top{display:flex;align-items:center;justify-content:space-between;padding:0 5vw;height:72px;background:linear-gradient(135deg,#ffffff 0%,#e8f6fe 60%,#c8e8f8 100%)!important;border-bottom:1px solid var(--b2);box-shadow:0 2px 18px rgba(26,111,212,.12)}
 .nav-logo img{height:64px;width:auto}
 .nav-top-right{display:flex;align-items:center;gap:1.2rem}
 .nav-phone{display:flex;align-items:center;gap:8px;text-decoration:none;color:var(--b7)}
@@ -45,6 +45,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;box-shadow:0 2px 12px rgba(0
 .hbc.c2{width:300px;height:300px;bottom:-80px;left:10%}
 .hlh{position:absolute;right:0;top:0;bottom:0;width:55%;max-width:55%;opacity:1;overflow:hidden}
 .hlh img{width:100%;height:100%;object-fit:cover;border-radius:0;display:block}.hlh::after{content:"";position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(to right,var(--b9) 0%,rgba(6,24,41,.7) 50%,transparent 100%)}
+.hlh-logo{position:absolute;bottom:2rem;right:2rem;z-index:3;filter:drop-shadow(0 4px 16px rgba(0,0,0,.6));}
+.hlh-logo img{height:80px;width:auto;opacity:.9;}
 .hc{position:relative;z-index:2;max-width:620px}
 .badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:50px;padding:6px 16px;font-size:.8rem;font-weight:500;color:var(--b2);margin-bottom:1.5rem;letter-spacing:.04em}
 .badge::before{content:'';width:7px;height:7px;background:#4ade80;border-radius:50%;animation:pulse 2s infinite}
@@ -78,12 +80,25 @@ h2{font-family:var(--fh);font-size:clamp(1.9rem,3.5vw,2.8rem);font-weight:800;le
 .sc.express::before{background:#f59e0b}
 .sc.express:hover{box-shadow:0 8px 32px rgba(245,158,11,.2)}
 .exbadge{display:inline-flex;align-items:center;gap:4px;background:#f59e0b;color:#78350f;font-size:.68rem;font-weight:700;padding:3px 10px;border-radius:50px;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.75rem}
-.si{width:48px;height:48px;background:var(--b0);border-radius:var(--rs);display:flex;align-items:center;justify-content:center;margin-bottom:1.2rem;font-size:1.4rem}
+.si{width:72px;height:72px;background:var(--b0);border-radius:var(--rs);display:flex;align-items:center;justify-content:center;margin-bottom:1.2rem;font-size:2rem}
 .sc.express .si{background:#fef3c7}
 .sn{font-family:var(--fh);font-size:1.05rem;font-weight:700;color:var(--b9);margin-bottom:.5rem}
 .sd{font-size:.88rem;color:var(--g5);line-height:1.6}
 .sc.express .sd{color:#92400e}
 .sc-link{margin-top:1rem;display:inline-flex;align-items:center;gap:6px;font-size:.82rem;font-weight:500;color:var(--b5)}
+
+/* PROMOCIONES */
+#promociones{background:linear-gradient(135deg,#e8f6fe 0%,#f0f8ff 100%)}
+.promo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin-top:3rem}
+.promo-card{background:var(--w);border-radius:var(--r);overflow:hidden;box-shadow:0 4px 20px rgba(26,111,212,.1);border:1px solid var(--b1);transition:transform .2s,box-shadow .2s;position:relative}
+.promo-card:hover{transform:translateY(-4px);box-shadow:0 10px 36px rgba(26,111,212,.18)}
+.promo-card img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
+.promo-card-body{padding:1.2rem 1.5rem 1.5rem}
+.promo-badge{display:inline-flex;align-items:center;gap:6px;background:var(--b5);color:#fff;font-size:.7rem;font-weight:700;padding:4px 12px;border-radius:50px;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.75rem}
+.promo-title{font-family:var(--fh);font-size:1.1rem;font-weight:800;color:var(--b9);margin-bottom:.4rem}
+.promo-desc{font-size:.85rem;color:var(--g5);line-height:1.6}
+.promo-empty{text-align:center;padding:3rem 2rem;background:rgba(255,255,255,.7);border:2px dashed var(--b2);border-radius:var(--r);color:var(--g5);font-size:.9rem;margin-top:2rem}
+.promo-empty svg{margin-bottom:.75rem;opacity:.4}
 
 /* SUCURSALES */
 #sucursales{background:var(--w)}
@@ -227,6 +242,7 @@ footer a{font-size:.8rem;color:var(--b2);text-decoration:none}
   <div class="nav-bottom">
     <ul class="nav-links">
       <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#promociones">Promociones</a></li>
       <li><a href="#sucursales">Sucursales</a></li>
       <li><a href="#horarios">Contacto</a></li>
       <li>
@@ -250,7 +266,10 @@ footer a{font-size:.8rem;color:var(--b2);text-decoration:none}
 <section id="hero" style="background:#061829!important;min-height:100vh;display:flex;align-items:center;">
   <div class="hbc c1"></div>
   <div class="hbc c2"></div>
-  <div class="hlh"><img src="https://raw.githubusercontent.com/deividamigosf-sys/FULLWASH-WEB/main/dexter.jpg" alt="Lavadoras DEXTER FullWash"></div>
+  <div class="hlh">
+    <img src="https://raw.githubusercontent.com/deividamigosf-sys/FULLWASH-WEB/main/dexter.jpg" alt="Lavadoras DEXTER FullWash">
+    <div class="hlh-logo"><img src="https://raw.githubusercontent.com/deividamigosf-sys/FULLWASH-WEB/main/logo.png" alt="FullWash Logo"></div>
+  </div>
   <div class="hc">
     <div class="badge">Cuenca, Ecuador — 4 sucursales</div>
     <h1>Tu ropa,<br><em>impecable</em><br>siempre.</h1>
@@ -282,41 +301,57 @@ footer a{font-size:.8rem;color:var(--b2);text-decoration:none}
   </div>
   <div class="sg">
     <div class="sc rv" onclick="abrirServicio('aguaModal')">
-      <div class="si"><img src="https://raw.githubusercontent.com/deividamigosf-sys/FULLWASH-WEB/main/ICONOLAVADORA.png" alt="Lavado" style="width:36px;height:36px;object-fit:contain"></div>
+      <div class="si"><img src="https://raw.githubusercontent.com/deividamigosf-sys/FULLWASH-WEB/main/ICONOLAVADORA.png" alt="Lavado" style="width:56px;height:56px;object-fit:contain"></div>
       <div class="sn">Lavado en agua</div>
       <p class="sd">Proceso completo de lavado, secado y doblado con maquinaria industrial DEXTER. Incluye detergente y suavizante.</p>
       <div class="sc-link">Ver detalles <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
     </div>
     <div class="sc rv" onclick="abrirServicio('secoModal')">
-      <div class="si"><img src="https://raw.githubusercontent.com/deividamigosf-sys/FULLWASH-WEB/main/ICONOSECO.jpg" alt="Lavado en seco" style="width:36px;height:36px;object-fit:contain"></div>
+      <div class="si"><img src="https://raw.githubusercontent.com/deividamigosf-sys/FULLWASH-WEB/main/ICONOSECO.jpg" alt="Lavado en seco" style="width:56px;height:56px;object-fit:contain"></div>
       <div class="sn">Lavado en seco</div>
       <p class="sd">Limpieza profesional para prendas delicadas: seda, lana, trajes, vestidos de novia, togas y más. Protege colores y fibras.</p>
       <div class="sc-link">Ver detalles <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
     </div>
     <div class="sc rv">
-      <div class="si"><img src="https://raw.githubusercontent.com/deividamigosf-sys/FULLWASH-WEB/main/INOCOPLANCHADO.png" alt="Planchado" style="width:36px;height:36px;object-fit:contain"></div>
+      <div class="si"><img src="https://raw.githubusercontent.com/deividamigosf-sys/FULLWASH-WEB/main/INOCOPLANCHADO.png" alt="Planchado" style="width:56px;height:56px;object-fit:contain"></div>
       <div class="sn">Planchado</div>
       <p class="sd">Planchado profesional de camisas, pantalones, vestidos y todo tipo de prendas.</p>
     </div>
     <div class="sc rv" onclick="abrirServicio('alfombraModal')">
-      <div class="si"><img src="https://raw.githubusercontent.com/deividamigosf-sys/FULLWASH-WEB/main/ICONOLAVALFOMBRAS.png" alt="Alfombras" style="width:36px;height:36px;object-fit:contain"></div>
+      <div class="si"><img src="https://raw.githubusercontent.com/deividamigosf-sys/FULLWASH-WEB/main/ICONOLAVALFOMBRAS.png" alt="Alfombras" style="width:56px;height:56px;object-fit:contain"></div>
       <div class="sn">Lavado de Alfombras</div>
       <p class="sd">Lavado profundo con maquinaria industrial especializada. Eliminamos ácaros, bacterias y manchas profundas preservando colores y fibras.</p>
       <div class="sc-link">Ver detalles <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
     </div>
     <div class="sc rv domicilio-card" onclick="abrirModal()" style="cursor:pointer;border-color:var(--b2)">
-      <div class="si" style="background:var(--b0)"><img src="https://raw.githubusercontent.com/deividamigosf-sys/FULLWASH-WEB/main/ICONODOMICILIO.png" alt="Domicilio" style="width:36px;height:36px;object-fit:contain"></div>
+      <div class="si" style="background:var(--b0)"><img src="https://raw.githubusercontent.com/deividamigosf-sys/FULLWASH-WEB/main/ICONODOMICILIO.png" alt="Domicilio" style="width:56px;height:56px;object-fit:contain"></div>
       <div class="sn">Servicio a Domicilio</div>
       <p class="sd">Recogemos tu ropa en tu casa y la entregamos lista. Sin filas, sin esperas. Solo coordina por WhatsApp.</p>
       <div class="sc-link">Solicitar recogida <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
     </div>
     <div class="sc express rv" onclick="abrirServicio('expressModal')">
       <div class="exbadge"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>Express — 2 horas</div>
-      <div class="si"><img src="https://raw.githubusercontent.com/deividamigosf-sys/FULLWASH-WEB/main/ICONOEXPRESS.png" alt="Express" style="width:36px;height:36px;object-fit:contain"></div>
+      <div class="si"><img src="https://raw.githubusercontent.com/deividamigosf-sys/FULLWASH-WEB/main/ICONOEXPRESS.png" alt="Express" style="width:56px;height:56px;object-fit:contain"></div>
       <div class="sn">Autoservicio Express</div>
       <p class="sd">Servicio por encargo o autoservicio. Tu ropa lista en 2 horas, incluye detergente y suavizante, sin perder calidad.</p>
       <div class="sc-link">Ver detalles <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
     </div>
+  </div>
+</section>
+
+<section id="promociones">
+  <div class="rv">
+    <span class="sl2">Ofertas especiales</span>
+    <h2>Promociones</h2>
+    <p class="ss">Aprovecha nuestras ofertas exclusivas. Las promociones se actualizan directamente desde nuestra galería.</p>
+  </div>
+  <div class="promo-grid" id="promoGrid">
+    <!-- Las promociones se cargan dinámicamente desde GitHub -->
+  </div>
+  <div class="promo-empty" id="promoEmpty" style="display:none">
+    <svg width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M4 14.899A7 7 0 1115.71 8h1.79a4.5 4.5 0 012.5 8.242"/><path d="M12 12v9m-3-3 3 3 3-3"/></svg>
+    <p>🎉 ¡Pronto habrá nuevas promociones!</p>
+    <p style="font-size:.8rem;margin-top:.4rem">Sube el archivo <strong>PROMO.png</strong> (o PROMO1.png, PROMO2.png...) a tu repositorio de GitHub para que aparezca aquí automáticamente.</p>
   </div>
 </section>
 
@@ -375,6 +410,10 @@ footer a{font-size:.8rem;color:var(--b2);text-decoration:none}
     <span class="dexter-machine">🌀</span>
     <span class="dexter-machine">🌀</span>
     <span class="dexter-machine">🌀</span>
+  </div>
+  <!-- Logo de fondo con degradado -->
+  <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none;z-index:0;overflow:hidden">
+    <img src="https://raw.githubusercontent.com/deividamigosf-sys/FULLWASH-WEB/main/logo.png" alt="" style="width:min(600px,80%);opacity:.04;filter:grayscale(1) brightness(10);-webkit-mask-image:radial-gradient(ellipse 70% 60% at 50% 50%,black 30%,transparent 100%);mask-image:radial-gradient(ellipse 70% 60% at 50% 50%,black 30%,transparent 100%);object-fit:contain;display:block">
   </div>
   <div class="rv" style="position:relative;z-index:2">
     <span class="sl2" style="color:var(--b4)">Por qué FullWash</span>
@@ -458,7 +497,7 @@ footer a{font-size:.8rem;color:var(--b2);text-decoration:none}
 
 <footer>
   <img src="https://raw.githubusercontent.com/deividamigosf-sys/FULLWASH-WEB/main/logo.png" alt="FullWash">
-  <div style="font-size:.8rem">© 2025 FullWash® — Tu ropa, como nueva. Cuenca, Ecuador</div>
+  <div style="font-size:.8rem">© 2025 FullWash® — Tu ropa, como nueva. Cuenca, Ecuador<br><span style="font-size:.72rem;color:var(--g3)">Todos los derechos reservados. Prohibida la reproducción total o parcial sin autorización escrita.</span></div>
   <div style="display:flex;gap:1rem;flex-wrap:wrap">
     <a href="https://www.tiktok.com/@lavanderiafullwash?_r=1&_t=ZS-95PLJECjz9Q" target="_blank">TikTok</a>
     <a href="https://www.instagram.com/lavafullwash?igsh=bnQ2cDhoNG45MDJl" target="_blank">Instagram</a>
@@ -598,7 +637,7 @@ footer a{font-size:.8rem;color:var(--b2);text-decoration:none}
     <div class="fg"><label class="fl">Barrio / Sector *</label><input class="fi" type="text" id="iBa" placeholder="Ej: El Valle, Ricaurte, Centro..." maxlength="80"><div class="fe" id="eBa">Ingresa tu sector.</div></div>
     <div class="fg"><label class="fl">Tipo de servicio</label>
       <select class="fi" id="iSer">
-        <option>💧 Lavado en agua</option>
+        <option>💧 Lavado en agua</option> 
         <option>🧺 Lavado de Alfombras</option>
         <option>🤔 Aún no lo sé</option>
       </select>
@@ -651,6 +690,53 @@ function enviar(){
   window.open('https://wa.me/593967586150?text='+msg,'_blank');
   cerrar();
 }
+// Carga de Promociones desde GitHub
+(function(){
+  var REPO = 'deividamigosf-sys/FULLWASH-WEB';
+  var RAW = 'https://raw.githubusercontent.com/' + REPO + '/main/';
+  var promos = [
+    {file:'PROMO.png', title:'Promoción Especial'},
+    {file:'PROMO1.png', title:'Oferta 1'},
+    {file:'PROMO2.png', title:'Oferta 2'},
+    {file:'PROMO3.png', title:'Oferta 3'},
+    {file:'PROMO4.png', title:'Oferta 4'},
+    {file:'PROMO5.png', title:'Oferta 5'},
+  ];
+  var grid = document.getElementById('promoGrid');
+  var empty = document.getElementById('promoEmpty');
+  var loaded = 0;
+  var total = promos.length;
+  var found = 0;
+
+  promos.forEach(function(p){
+    var img = new Image();
+    img.onload = function(){
+      found++;
+      var card = document.createElement('div');
+      card.className = 'promo-card rv';
+      card.innerHTML = '<img src="'+RAW+p.file+'" alt="'+p.title+'" loading="lazy">'
+        +'<div class="promo-card-body">'
+        +'<div class="promo-badge">🏷️ Promoción</div>'
+        +'<div class="promo-title">'+p.title+'</div>'
+        +'<p class="promo-desc">¡Aprovecha esta oferta exclusiva en FullWash! Consulta vigencia y condiciones en nuestras sucursales o por WhatsApp.</p>'
+        +'</div>';
+      grid.appendChild(card);
+      // Trigger reveal
+      setTimeout(function(){card.classList.add('vis');},50);
+      check();
+    };
+    img.onerror = function(){ check(); };
+    img.src = RAW + p.file + '?t=' + Date.now();
+  });
+
+  function check(){
+    loaded++;
+    if(loaded === total){
+      if(found === 0) empty.style.display = 'block';
+    }
+  }
+})();
+
 // Scroll reveal
 var rvs=document.querySelectorAll('.rv');
 var obs=new IntersectionObserver(function(entries){
