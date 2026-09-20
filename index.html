@@ -110,7 +110,7 @@
             "itemOffered": {
               "@type": "Service",
               "name": "Lavado en Agua",
-              "description": "Servicio de lavandería con equipo industrial DEXTER. Lavamos, secamos y doblamos tu ropa, edredones, sábanas y cobijas con detergente y suavizante incluidos."
+              "description": "Servicio de lavandería con equipo de lavandería industrial DEXTER. Lavamos, secamos y doblamos tu ropa, edredones, sábanas y cobijas con detergente y suavizante incluidos."
             }
           },
           {
@@ -142,7 +142,7 @@
             "itemOffered": {
               "@type": "Service",
               "name": "Autoservicio Express",
-              "description": "Servicio por encargo o autoservicio con equipo industrial DEXTER. Tu ropa lista en 2 horas, incluye detergente y suavizante."
+              "description": "Servicio por encargo o autoservicio con equipo de lavandería industrial DEXTER. Tu ropa lista en 2 horas, incluye detergente y suavizante."
             }
           },
           {
@@ -240,7 +240,7 @@
           "name": "¿Cuánto tiempo tarda el servicio express de FullWash?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Nuestro autoservicio express entrega tu ropa lista en aproximadamente 2 horas, incluye detergente y suavizante con maquinaria industrial DEXTER."
+            "text": "Nuestro autoservicio express entrega tu ropa lista en aproximadamente 2 horas, incluye detergente y suavizante con maquinaria de lavandería industrial DEXTER."
           }
         },
         {
@@ -323,7 +323,7 @@
 </script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -331,7 +331,7 @@
 --b2:#a8d8f8;--b1:#d0ecfd;--b0:#e8f6fe;
 --accent:#00c4ff;
 --w:#fff;--g1:#f0f8ff;--g3:#b8d8ef;--g5:#4a7a9b;--g7:#1e3a5a;
---fh:'Syne',sans-serif;--fb:'DM Sans',sans-serif;--r:16px;--rs:8px;
+--fh:'Poppins',sans-serif;--fb:'DM Sans',sans-serif;--r:16px;--rs:8px;
 }
 html{scroll-behavior:smooth}
 body{font-family:var(--fb);background:var(--w);color:var(--b9);overflow-x:hidden}
@@ -369,7 +369,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;box-shadow:0 2px 12px rgba(0
 .badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:50px;padding:6px 16px;font-size:.8rem;font-weight:500;color:var(--b2);margin-bottom:1.5rem;letter-spacing:.04em}
 .badge::before{content:'';width:7px;height:7px;background:#4ade80;border-radius:50%;animation:pulse 2s infinite}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.6;transform:scale(1.3)}}
-h1{font-family:var(--fh);font-size:clamp(2.8rem,6vw,4.8rem);font-weight:800;line-height:1.05;letter-spacing:-.03em;color:var(--w);margin-bottom:1.2rem}
+h1{font-family:var(--fh);font-size:clamp(2.6rem,5.6vw,4.4rem);font-weight:800;line-height:1.15;letter-spacing:-.01em;color:var(--w);margin-bottom:1.2rem}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 h1 em{font-style:normal;color:var(--b4)}
 .hsub{font-size:1.1rem;color:var(--b2);line-height:1.7;margin-bottom:2.5rem;font-weight:300;max-width:480px}
 .hbtns{display:flex;gap:1rem;flex-wrap:wrap}
@@ -581,8 +582,8 @@ footer a{font-size:.8rem;color:var(--b2);text-decoration:none}
   </div>
   <div class="hc">
     <div class="badge">Cuenca, Ecuador — 4 sucursales</div>
-    <h1>Tu ropa,<br><em>impecable</em><br>siempre.</h1>
-    <p class="hsub">Lavado profesional con equipo industrial DEXTER. Servicio express listo en 2 horas. Recolección y entrega a domicilio disponible.</p>
+    <h1>Tu ropa, <br> <em>impecable</em> <br> siempre. <span class="sr-only">Lavandería en Cuenca, Ecuador.</span></h1>
+    <p class="hsub">Lavado profesional de prendas de vestir, menaje del hogar, alfombras y lavado en seco con equipo de lavandería industrial DEXTER. Servicio express listo en 2 horas, con recolección y entrega a domicilio.</p>
     <div class="hbtns">
       <a href="#sucursales" class="bp">
         <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
@@ -612,7 +613,7 @@ footer a{font-size:.8rem;color:var(--b2);text-decoration:none}
     <div class="sc rv" onclick="abrirServicio('aguaModal')">
       <div class="si"><img src="https://raw.githubusercontent.com/deividamigosf-sys/FULLWASH-WEB/main/ICONOLAVADORA.png" alt="Lavado" style="width:56px;height:56px;object-fit:contain"></div>
       <div class="sn">Lavado en agua</div>
-      <p class="sd">Servicio de lavandería con equipo industrial DEXTER. Lavamos, secamos y doblamos tu ropa, edredones, sábanas y cobijas con detergente y suavizante incluidos.</p>
+      <p class="sd">Servicio de lavandería con equipo de lavandería industrial DEXTER. Lavamos, secamos y doblamos tu ropa, edredones, sábanas y cobijas con detergente y suavizante incluidos.</p>
       <div class="sc-link">Ver detalles <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
     </div>
     <div class="sc rv" onclick="abrirServicio('secoModal')">
@@ -880,7 +881,7 @@ footer a{font-size:.8rem;color:var(--b2);text-decoration:none}
     <span class="sl2" style="color:var(--b4)">Por qué FullWash</span>
     <h2>Calidad que se nota</h2>
     <p class="ss">Más que una lavandería, somos el cuidado que tus prendas merecen.</p>
-    <div class="dexter-badge">🏭 Maquinaria Industrial DEXTER</div>
+    <div class="dexter-badge">🏭 Maquinaria de Lavandería DEXTER</div>
   </div>
   <div class="wg">
     <div class="wc rv"><div class="wn">01</div><div class="wt">Máquinas DEXTER</div><p class="wd">Lavadoras y secadoras industriales DEXTER: limpian más profundo y cuidan mejor cada tipo de tela.</p></div>
@@ -909,7 +910,7 @@ footer a{font-size:.8rem;color:var(--b2);text-decoration:none}
           Lo que empezó como un primer local fue creciendo hasta convertirse en <strong>4 sucursales en Cuenca</strong> — El Valle, Chilcapamba, Capulispamba y Narancay — ubicadas estratégicamente para estar siempre cerca de donde nuestros clientes viven. Y cuando no pueden venir a nosotros, nosotros vamos a ellos con el servicio a domicilio.
         </p>
         <p style="font-size:1rem;color:#334155;line-height:1.8">
-          Hoy lavamos en todas nuestras sucursales con <strong>equipo industrial DEXTER</strong>, los mismos equipos que usan las lavanderías más exigentes del mundo. Porque tu ropa merece lo mejor.
+          Hoy lavamos en todas nuestras sucursales con <strong>equipo de lavandería industrial DEXTER</strong>, los mismos equipos que usan las lavanderías más exigentes del mundo. Porque tu ropa merece lo mejor.
         </p>
       </div>
       <div style="display:flex;flex-direction:column;gap:1rem">
@@ -1014,7 +1015,7 @@ footer a{font-size:.8rem;color:var(--b2);text-decoration:none}
       <details style="background:#fff;border-radius:12px;padding:1.2rem 1.4rem;margin-bottom:.75rem;box-shadow:0 1px 4px rgba(0,0,0,.07);cursor:pointer">
         <summary style="font-weight:700;color:#0e3562;font-size:1rem;list-style:none;display:flex;justify-content:space-between;align-items:center">¿Cuánto tiempo tarda el servicio express de FullWash? <span style="font-size:1.3rem;color:#38a8f5">+</span></summary>
         <div style="margin-top:.75rem;color:#475569;font-size:.92rem;line-height:1.7">
-          <span>Nuestro autoservicio express entrega tu ropa lista en aproximadamente 2 horas, incluye detergente y suavizante con maquinaria industrial DEXTER.</span>
+          <span>Nuestro autoservicio express entrega tu ropa lista en aproximadamente 2 horas, incluye detergente y suavizante con maquinaria de lavandería industrial DEXTER.</span>
         </div>
       </details>
 
