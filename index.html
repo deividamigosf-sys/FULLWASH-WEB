@@ -406,17 +406,7 @@ h2{font-family:var(--fh);font-size:clamp(1.9rem,3.5vw,2.8rem);font-weight:800;le
 .sc-link{margin-top:1rem;display:inline-flex;align-items:center;gap:6px;font-size:.82rem;font-weight:500;color:var(--b5)}
 
 /* PROMOCIONES */
-#promociones{background:linear-gradient(135deg,#e8f6fe 0%,#f0f8ff 100%)}
-.promo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin-top:3rem}
-.promo-card{background:var(--w);border-radius:var(--r);overflow:hidden;box-shadow:0 4px 20px rgba(26,111,212,.1);border:1px solid var(--b1);transition:transform .2s,box-shadow .2s;position:relative}
-.promo-card:hover{transform:translateY(-4px);box-shadow:0 10px 36px rgba(26,111,212,.18)}
-.promo-card img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
-.promo-card-body{padding:1.2rem 1.5rem 1.5rem}
-.promo-badge{display:inline-flex;align-items:center;gap:6px;background:var(--b5);color:#fff;font-size:.7rem;font-weight:700;padding:4px 12px;border-radius:50px;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.75rem}
-.promo-title{font-family:var(--fh);font-size:1.1rem;font-weight:800;color:var(--b9);margin-bottom:.4rem}
-.promo-desc{font-size:.85rem;color:var(--g5);line-height:1.6}
-.promo-empty{text-align:center;padding:3rem 2rem;background:rgba(255,255,255,.7);border:2px dashed var(--b2);border-radius:var(--r);color:var(--g5);font-size:.9rem;margin-top:2rem}
-.promo-empty svg{margin-bottom:.75rem;opacity:.4}
+#beneficios{background:linear-gradient(135deg,#e8f6fe 0%,#f0f8ff 100%)}
 
 /* SUCURSALES */
 #sucursales{background:var(--w)}
@@ -560,7 +550,7 @@ footer a{font-size:.8rem;color:var(--b2);text-decoration:none}
   <div class="nav-bottom">
     <ul class="nav-links">
       <li><a href="#servicios">Servicios</a></li>
-      <li><a href="#promociones">Promociones</a></li>
+      <li><a href="#beneficios">Por qué elegirnos</a></li>
       <li><a href="#sucursales">Sucursales</a></li>
       <li><a href="#quienes-somos">Quiénes somos</a></li>
       <li><a href="#horarios">Contacto</a></li>
@@ -658,19 +648,43 @@ footer a{font-size:.8rem;color:var(--b2);text-decoration:none}
   </div>
 </section>
 
-<section id="promociones">
+<section id="beneficios">
   <div class="rv">
-    <span class="sl2">Ofertas especiales</span>
-    <h2>Promociones</h2>
-    <p class="ss">Aprovecha nuestras ofertas exclusivas. Las promociones se actualizan directamente desde nuestra galería.</p>
+    <span class="sl2">Nuestro compromiso</span>
+    <h2>¿Por qué elegirnos?</h2>
+    <p class="ss">Miles de prendas lavadas en Cuenca nos respaldan. Esto es lo que nos hace diferentes.</p>
   </div>
-  <div class="promo-grid" id="promoGrid">
-    <!-- Las promociones se cargan dinámicamente desde GitHub -->
-  </div>
-  <div class="promo-empty" id="promoEmpty" style="display:none">
-    <svg width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M4 14.899A7 7 0 1115.71 8h1.79a4.5 4.5 0 012.5 8.242"/><path d="M12 12v9m-3-3 3 3 3-3"/></svg>
-    <p>🎉 ¡Pronto habrá nuevas promociones!</p>
-    <p style="font-size:.8rem;margin-top:.4rem">Sube el archivo <strong>PROMO.png</strong> (o PROMO1.png, PROMO2.png...) a tu repositorio de GitHub para que aparezca aquí automáticamente.</p>
+  <div class="sg">
+    <div class="sc rv">
+      <div class="si">🏭</div>
+      <div class="sn">Maquinaria industrial DEXTER</div>
+      <p class="sd">Lavadoras y secadoras de la misma marca que usan las lavanderías más exigentes del mundo: limpieza más profunda cuidando cada fibra.</p>
+    </div>
+    <div class="sc rv">
+      <div class="si">🛡️</div>
+      <div class="sn">Garantía y compromiso</div>
+      <p class="sd">Si tu prenda sufre algún daño durante el proceso, te lo notificamos de inmediato y nos hacemos responsables. Tu ropa está en buenas manos.</p>
+    </div>
+    <div class="sc rv">
+      <div class="si">⚡</div>
+      <div class="sn">Servicio express en 2 horas</div>
+      <p class="sd">¿Con prisa? Nuestro autoservicio express entrega tu ropa lista el mismo día, sin sacrificar calidad.</p>
+    </div>
+    <div class="sc rv">
+      <div class="si">📍</div>
+      <div class="sn">4 sucursales en Cuenca</div>
+      <p class="sd">El Valle, Chilcapamba, Capulispamba y Narancay. Siempre tienes una sucursal FullWash cerca de ti.</p>
+    </div>
+    <div class="sc rv">
+      <div class="si">🚗</div>
+      <div class="sn">Recolección y entrega a domicilio</div>
+      <p class="sd">Coordina por WhatsApp y nosotros pasamos a recoger y entregar tu ropa lista, sin filas ni esperas.</p>
+    </div>
+    <div class="sc rv">
+      <div class="si">🅿️</div>
+      <div class="sn">Parqueadero gratuito</div>
+      <p class="sd">Todas nuestras sucursales cuentan con parqueadero gratis para tu comodidad.</p>
+    </div>
   </div>
 </section>
 
@@ -1304,53 +1318,6 @@ function enviar(){
   window.open('https://wa.me/593967586150?text='+msg,'_blank');
   cerrar();
 }
-// Carga de Promociones desde GitHub
-(function(){
-  var REPO = 'deividamigosf-sys/FULLWASH-WEB';
-  var RAW = 'https://raw.githubusercontent.com/' + REPO + '/main/';
-  var promos = [
-    {file:'PROMO.png', title:'Promoción Especial'},
-    {file:'PROMO1.png', title:'Oferta 1'},
-    {file:'PROMO2.png', title:'Oferta 2'},
-    {file:'PROMO3.png', title:'Oferta 3'},
-    {file:'PROMO4.png', title:'Oferta 4'},
-    {file:'PROMO5.png', title:'Oferta 5'},
-  ];
-  var grid = document.getElementById('promoGrid');
-  var empty = document.getElementById('promoEmpty');
-  var loaded = 0;
-  var total = promos.length;
-  var found = 0;
-
-  promos.forEach(function(p){
-    var img = new Image();
-    img.onload = function(){
-      found++;
-      var card = document.createElement('div');
-      card.className = 'promo-card rv';
-      card.innerHTML = '<img src="'+RAW+p.file+'" alt="'+p.title+'" loading="lazy">'
-        +'<div class="promo-card-body">'
-        +'<div class="promo-badge">🏷️ Promoción</div>'
-        +'<div class="promo-title">'+p.title+'</div>'
-        +'<p class="promo-desc">¡Aprovecha esta oferta exclusiva en FullWash! Consulta vigencia y condiciones en nuestras sucursales o por WhatsApp.</p>'
-        +'</div>';
-      grid.appendChild(card);
-      // Trigger reveal
-      setTimeout(function(){card.classList.add('vis');},50);
-      check();
-    };
-    img.onerror = function(){ check(); };
-    img.src = RAW + p.file + '?t=' + Date.now();
-  });
-
-  function check(){
-    loaded++;
-    if(loaded === total){
-      if(found === 0) empty.style.display = 'block';
-    }
-  }
-})();
-
 // Scroll reveal
 var rvs=document.querySelectorAll('.rv');
 var obs=new IntersectionObserver(function(entries){
